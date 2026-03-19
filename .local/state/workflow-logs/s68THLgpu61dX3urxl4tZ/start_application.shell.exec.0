@@ -1,0 +1,11 @@
+(node:3067) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:3067) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+[eslint] Failed to load parser '@babel/eslint-parser' declared in 'BaseConfig » /home/runner/workspace/frontend/node_modules/eslint-config-react-app/base.js': Package subpath './lib/definition' is not defined by "exports" in /home/runner/workspace/frontend/node_modules/eslint-scope/package.json
+[1m[31mERROR[39m[22m in [1m[eslint] [1m[31mFailed[39m[22m[1m to load parser '@babel/eslint-parser' declared in 'BaseConfig » /home/runner/workspace/frontend/node_modules/eslint-config-react-app/base.js': Package subpath './lib/definition' is not defined by "exports" in /home/runner/workspace/frontend/node_modules/eslint-scope/package.json[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m

@@ -1,0 +1,156 @@
+(node:2628) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:2628) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+Module not found: Error: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/background/dist/esm'
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/background/dist/esm/index.mjs[39m[22m [1m[32m4:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/background/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/controls/dist/esm/index.mjs[39m[22m [1m[32m3:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/controls/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/core/dist/esm/index.mjs[39m[22m [1m[32m3:0-83[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/traditional' in '/home/runner/workspace/frontend/node_modules/@reactflow/core/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/core/dist/esm/index.mjs[39m[22m [1m[32m4:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/core/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/core/dist/esm/index.mjs[39m[22m [1m[32m6:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/@reactflow/core/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/minimap/dist/esm/index.mjs[39m[22m [1m[32m3:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/minimap/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/minimap/dist/esm/index.mjs[39m[22m [1m[32m5:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/@reactflow/minimap/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/node-resizer/dist/esm/index.mjs[39m[22m [1m[32m4:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/@reactflow/node-resizer/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/node-toolbar/dist/esm/index.mjs[39m[22m [1m[32m4:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/node-toolbar/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-drag/src/drag.js[39m[22m [1m[32m2:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-drag/src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-drag/src/nodrag.js[39m[22m [1m[32m1:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-drag/src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/selection/index.js[39m[22m [1m[32m1:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/selection'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/attr.js[39m[22m [1m[32m2:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/attrTween.js[39m[22m [1m[32m1:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/filter.js[39m[22m [1m[32m1:0-39[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/index.js[39m[22m [1m[32m1:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/select.js[39m[22m [1m[32m1:0-40[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/selectAll.js[39m[22m [1m[32m1:0-43[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/selection.js[39m[22m [1m[32m1:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/style.js[39m[22m [1m[32m2:0-37[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-zoom/src/zoom.js[39m[22m [1m[32m4:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-zoom/src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] [1m[31mFailed[39m[22m[1m to load parser '@babel/eslint-parser' declared in 'BaseConfig » /home/runner/workspace/frontend/node_modules/eslint-config-react-app/base.js': Package subpath './lib/definition' is not defined by "exports" in /home/runner/workspace/frontend/node_modules/eslint-scope/package.json[39m[22m
+
+webpack compiled with [1m[31m22 errors[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+Module not found: Error: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/background/dist/esm'
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/background/dist/esm/index.mjs[39m[22m [1m[32m4:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/background/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/controls/dist/esm/index.mjs[39m[22m [1m[32m3:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/controls/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/core/dist/esm/index.mjs[39m[22m [1m[32m3:0-83[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/traditional' in '/home/runner/workspace/frontend/node_modules/@reactflow/core/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/core/dist/esm/index.mjs[39m[22m [1m[32m4:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/core/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/core/dist/esm/index.mjs[39m[22m [1m[32m6:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/@reactflow/core/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/minimap/dist/esm/index.mjs[39m[22m [1m[32m3:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/minimap/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/minimap/dist/esm/index.mjs[39m[22m [1m[32m5:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/@reactflow/minimap/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/node-resizer/dist/esm/index.mjs[39m[22m [1m[32m4:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/@reactflow/node-resizer/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/@reactflow/node-toolbar/dist/esm/index.mjs[39m[22m [1m[32m4:0-42[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zustand/shallow' in '/home/runner/workspace/frontend/node_modules/@reactflow/node-toolbar/dist/esm'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-drag/src/drag.js[39m[22m [1m[32m2:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-drag/src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-drag/src/nodrag.js[39m[22m [1m[32m1:0-38[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-drag/src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/selection/index.js[39m[22m [1m[32m1:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/selection'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/attr.js[39m[22m [1m[32m2:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/attrTween.js[39m[22m [1m[32m1:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/filter.js[39m[22m [1m[32m1:0-39[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/index.js[39m[22m [1m[32m1:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/select.js[39m[22m [1m[32m1:0-40[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/selectAll.js[39m[22m [1m[32m1:0-43[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/selection.js[39m[22m [1m[32m1:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-transition/src/transition/style.js[39m[22m [1m[32m2:0-37[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-transition/src/transition'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./node_modules/d3-zoom/src/zoom.js[39m[22m [1m[32m4:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'd3-selection' in '/home/runner/workspace/frontend/node_modules/d3-zoom/src'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m[eslint] [1m[31mFailed[39m[22m[1m to load parser '@babel/eslint-parser' declared in 'BaseConfig » /home/runner/workspace/frontend/node_modules/eslint-config-react-app/base.js': Package subpath './lib/definition' is not defined by "exports" in /home/runner/workspace/frontend/node_modules/eslint-scope/package.json[39m[22m
+
+webpack compiled with [1m[31m22 errors[39m[22m
+[2J[3J[HCompiling...
+[2J[3J[H[32mCompiled successfully![39m
+
+You can now view [1mfrontend[22m in the browser.
+
+  [1mLocal:[22m            http://localhost:[1m5000[22m
+  [1mOn Your Network:[22m  http://172.31.79.98:[1m5000[22m
+
+Note that the development build is not optimized.
+To create a production build, use [36mnpm run build[39m.
+
+webpack compiled [1m[32msuccessfully[39m[22m
