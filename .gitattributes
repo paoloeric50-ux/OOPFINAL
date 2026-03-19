@@ -1,2 +1,4 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+data/db/journal/WiredTigerLog.0000000003 filter=lfs diff=lfs merge=lfs -text
+data/db/journal/WiredTigerPreplog.0000000001 filter=lfs diff=lfs merge=lfs -text
+data/db/journal/WiredTigerPreplog.0000000002 filter=lfs diff=lfs merge=lfs -text
+backend-java/target/payroll-2.0.0.jar filter=lfs diff=lfs merge=lfs -text

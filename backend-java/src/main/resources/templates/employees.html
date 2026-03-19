@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employees - MotorPH Payroll</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="/css/app.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="d-flex">
+  <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+  <main class="main-content flex-grow-1">
+    <div class="page-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="text-white">Employees</h1>
+          <p>Manage your workforce — full-time, part-time, and contractors.</p>
+        </div>
+        <a href="/employees/new" class="btn btn-primary">
+          <i class="bi bi-plus-lg me-2"></i>Add Employee
+        </a>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="glass-card mb-4">
+      <div class="row g-3 align-items-end">
+        <div class="col-12 col-md-4">
+          <label class="form-label">Search</label>
+          <div class="input-group">
+            <span class="input-group-text bg-transparent" style="border-color:rgba(255,255,255,0.1);color:#94a3b8;">
+              <i class="bi bi-search"></i>
+            </span>
+            <input type="text" id="search-input" class="form-control" placeholder="Search by name, ID, position..."/>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label">Type</label>
+          <select id="filter-type" class="form-select">
+            <option value="">All Types</option>
+            <option value="full-time">Full-Time</option>
+            <option value="part-time">Part-Time</option>
+            <option value="contract">Contract</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label">Status</label>
+          <select id="filter-status" class="form-select">
+            <option value="">All Status</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label">Department</label>
+          <select id="filter-dept" class="form-select">
+            <option value="">All Departments</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-2">
+          <button class="btn btn-outline-light w-100" id="clear-filters-btn">
+            <i class="bi bi-x-lg me-1"></i>Clear
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="glass-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted small" id="results-count">Loading...</span>
+      </div>
+      <div class="table-responsive">
+        <table class="table glass-table mb-0">
+          <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Position</th>
+            <th>Department</th>
+            <th>Type</th>
+            <th>Base Rate</th>
+            <th>Status</th>
+            <th class="text-end">Actions</th>
+          </tr>
+          </thead>
+          <tbody id="employees-body">
+          <tr><td colspan="7" class="text-center text-muted py-4">
+            <div class="spinner-border spinner-border-sm me-2"></div>Loading...
+          </td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Delete Confirm Modal -->
+<div class="modal fade modal-glass" id="deleteModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-white">Confirm Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete <strong id="delete-name" class="text-white"></strong>?
+          This action cannot be undone.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-danger" id="confirm-delete-btn">
+          <i class="bi bi-trash me-2"></i>Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/app.js"></script>
+<script>
+  if (!Auth.requireAuth()) { /* redirected */ }
+
+  let allEmployees = [];
+  let deleteModal, deleteId;
+
+  async function loadEmployees() {
+    try {
+      const params = new URLSearchParams();
+      const type = document.getElementById('filter-type').value;
+      const status = document.getElementById('filter-status').value;
+      const dept = document.getElementById('filter-dept').value;
+      if (type) params.append('employeeType', type);
+      if (status) params.append('status', status);
+      if (dept) params.append('department', dept);
+
+      const employees = await API.get('/employees?' + params.toString());
+      allEmployees = employees;
+
+      // Populate departments filter
+      const depts = [...new Set(employees.map(e => e.department).filter(Boolean))].sort();
+      const deptSelect = document.getElementById('filter-dept');
+      const currentDept = deptSelect.value;
+      deptSelect.innerHTML = '<option value="">All Departments</option>';
+      depts.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d; opt.textContent = d;
+        if (d === currentDept) opt.selected = true;
+        deptSelect.appendChild(opt);
+      });
+
+      renderTable(employees);
+    } catch (err) {
+      Toast.error('Failed to load employees: ' + err.message);
+    }
+  }
+
+  function renderTable(employees) {
+    const search = document.getElementById('search-input').value.toLowerCase();
+    const filtered = search ? employees.filter(e =>
+      (e.firstName + ' ' + e.lastName).toLowerCase().includes(search) ||
+      (e.employeeId || '').toLowerCase().includes(search) ||
+      (e.position || '').toLowerCase().includes(search)
+    ) : employees;
+
+    document.getElementById('results-count').textContent = `Showing ${filtered.length} of ${employees.length} employees`;
+    const tbody = document.getElementById('employees-body');
+
+    if (!filtered.length) {
+      tbody.innerHTML = '<tr><td colspan="7" class="text-center text-muted py-5">No employees found</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = filtered.map(emp => {
+      const rate = emp.employeeType === 'full-time' ? formatCurrency(emp.monthlyRate) + '/mo' :
+                   emp.employeeType === 'part-time' ? formatCurrency(emp.hourlyRate) + '/hr' :
+                   formatCurrency(emp.dailyRate) + '/day';
+      return `<tr>
+        <td>
+          <div class="d-flex align-items-center gap-2">
+            <div class="emp-avatar">${getInitials((emp.firstName||'') + ' ' + (emp.lastName||''))}</div>
+            <div>
+              <div class="fw-semibold text-white small">${emp.firstName} ${emp.lastName}</div>
+              <div class="text-muted" style="font-size:0.75rem;">${emp.employeeId || ''}</div>
+            </div>
+          </div>
+        </td>
+        <td class="small text-muted">${emp.position || '-'}</td>
+        <td class="small text-muted">${emp.department || '-'}</td>
+        <td>${getTypeBadge(emp.employeeType)}</td>
+        <td class="small text-white">${rate}</td>
+        <td>${getStatusBadge(emp.status)}</td>
+        <td class="text-end">
+          <a href="/employees/${emp._id}/edit" class="btn btn-outline-light btn-sm me-1">
+            <i class="bi bi-pencil"></i>
+          </a>
+          <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete('${emp._id}','${emp.firstName} ${emp.lastName}')">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>`;
+    }).join('');
+  }
+
+  function confirmDelete(id, name) {
+    deleteId = id;
+    document.getElementById('delete-name').textContent = name;
+    deleteModal.show();
+  }
+
+  document.getElementById('confirm-delete-btn').addEventListener('click', async () => {
+    try {
+      await API.delete('/employees/' + deleteId);
+      Toast.success('Employee deleted successfully');
+      deleteModal.hide();
+      loadEmployees();
+    } catch (err) {
+      Toast.error('Delete failed: ' + err.message);
+    }
+  });
+
+  document.getElementById('search-input').addEventListener('input', () => renderTable(allEmployees));
+  document.getElementById('filter-type').addEventListener('change', loadEmployees);
+  document.getElementById('filter-status').addEventListener('change', loadEmployees);
+  document.getElementById('filter-dept').addEventListener('change', loadEmployees);
+  document.getElementById('clear-filters-btn').addEventListener('click', () => {
+    document.getElementById('search-input').value = '';
+    document.getElementById('filter-type').value = '';
+    document.getElementById('filter-status').value = '';
+    document.getElementById('filter-dept').value = '';
+    loadEmployees();
+  });
+
+  deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+  loadEmployees();
+</script>
+</body>
+</html>
